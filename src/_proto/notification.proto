@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package notificaiondata;
+
+// Declared a service for each controller you have
+service NotificationService {
+  // Declared an rpc for each method that is called via gRPC
+  rpc SendConfirmationMail(CreateNotificationDto) returns (Response);
+}
+
+// Declared the types used above
+message CreateNotificationDto {
+  string email = 1;
+}
+message Response {
+  string message = 1;
+}
